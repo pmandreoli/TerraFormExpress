@@ -14,16 +14,18 @@ default = "large"
 
 variable key_pair {
 type = string
-default = "<key_pair_name>"
+default = "<key_name>"
 }
 
 variable security_groups {
 type = list
-default = ["<sec_group1>","<sec_group2>"]
+default = ["<sec1>","<sec2>"]
 }
 
 variable network_name_public {
 type = string
-default = "<public net>" 
+default = "<public_net>" 
 }
-
+output "public_ip"{
+value = openstack_compute_instance_v2.test.network[0].fixed_ip_v4
+}
