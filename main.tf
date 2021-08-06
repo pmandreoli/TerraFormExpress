@@ -8,7 +8,7 @@ security_groups = [ var.security_groups[0],var.security_groups[1]]
 user_data = file("scripts/M_volume.sh")
 
 network {
-name = var.network_name
+name = var.network_name_public
   }
 }
 
@@ -24,11 +24,3 @@ resource "openstack_compute_volume_attach_v2" "export-terra" {
   
 }
 
-resource "openstack_networking_floatingip_v2" "external-ip" {
-  pool = "floating-ip"
-}
-
-resource "openstack_compute_floatingip_associate_v2" "external-ip" {
-  floating_ip = "${openstack_networking_floatingip_v2.external-ip.address}"
-  instance_id = "${openstack_compute_instance_v2.test.id}"
-}

@@ -4,12 +4,12 @@ default = "terraform-ga"
 }
 variable image_name{
 type = string
-default = "galaxy20_05liteF" 
+default = "galaxy20_05lite" 
 }
 
 variable flavor_name {
 type = string
-default = "m1.large"
+default = "large"
 }
 
 variable key_pair {
@@ -19,13 +19,11 @@ default = "<key_pair_name>"
 
 variable security_groups {
 type = list
-default = ["<sec_group1>","sec_group2>"]
+default = ["<sec_group1>","<sec_group2>"]
 }
 
-variable network_name {
+variable network_name_public {
 type = string
-default = "<network_name>" 
+default = "<public net>" 
 }
-output "public_ip" {
-value = openstack_networking_floatingip_v2.external-ip.address 
-}
+
