@@ -18,7 +18,7 @@ default = "large"
 
 variable key_pair {
 type = string
-default = "Pietro"
+default = "cloud"
 }
 
 variable security_groups {
