@@ -8,7 +8,7 @@ default = "galaxy20_05lite"
 }
 variable image_name_nfs{
 type = string
-default = "a7294ef8-2e29-4062-9a2b-5b3bab00288a" 
+default = "c9aece47-bd74-4ba8-ba18-456c7447c878" 
 }
 
 variable flavor_name {
