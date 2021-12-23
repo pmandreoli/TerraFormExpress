@@ -8,7 +8,7 @@ default = "galaxy20_05lite"
 }
 variable image_name_nfs{
 type = string
-default = "c9aece47-bd74-4ba8-ba18-456c7447c878" 
+default = "dce4f5e5-1f4b-4543-ace3-340a315b4a66" 
 }
 
 variable flavor_name {
@@ -33,6 +33,10 @@ default = "private_net"
 variable network_name_public {
 type = string
 default = "public_net" 
+}
+variable CVMFS_IP{
+type = string
+default = "90.147.102.186"
 }
 output "public_ip"{
 value = openstack_compute_instance_v2.test.network[0].fixed_ip_v4
